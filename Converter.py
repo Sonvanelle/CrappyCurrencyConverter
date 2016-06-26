@@ -1,8 +1,9 @@
 import requests
 
 print("Simple Currency Converter")
-print("The source is: http://api.fixer.io/latest?base=SGD")
-url = 'http://api.fixer.io/latest?base=SGD'
+print("The source is: http://api.fixer.io/latest\n")
+base_currency = input("What is your base currency? Ex. HKD, EUR >> ")
+url = 'http://api.fixer.io/latest?base=' + base_currency
 r = requests.get(url)
 print("Status code: ", r.status_code)
 
@@ -15,10 +16,10 @@ print("Currencies returned: ", len(currencies))
 
 while True:	
 	currency = input("What is the code of currency you want to convert to? Ex. USD, GBP, INR >> ")
-	localcash = float(input("How much SGD do you have? >> "))
+	localcash = float(input("How much " + str(base_currency) + " do you have? >> "))
 
 	foreigncash = float(currencies.get(currency))
 	print("The conversion rate at this time is: ", foreigncash)
 	conversion = localcash * foreigncash
 	print("You have: %.2f" %conversion, " in ", currency, ".")
-	print("--------------------------------------------------------")
+	
