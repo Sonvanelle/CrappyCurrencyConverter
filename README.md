@@ -1,3 +1,3 @@
 # CrappyCurrencyConverter
-Really simple currency converter in Python. It sources from fixer.io, can convert from currency to currency based on user input. 
-TODO: idk
+Updated the previous version so it is easier(?) to use the program. You enter the commands in this fashion: 'convert <amount> <currency> to <currency>'.
+API is from fixer.io.
